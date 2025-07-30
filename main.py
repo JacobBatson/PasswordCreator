@@ -1,16 +1,13 @@
 import secrets
 import string
 
-
-#ADD UPPERCASE LETTERS AND MAKE SURE THAT 1 OF EACH TYPE IS IN THE PASSWORD SO 1 UPPER 1 LOWER 1 NUMBER AND 1 SPECIAL CHARACTER
-
-
 def password(length):
-    letters = string.ascii_letters
+    letters = string.ascii_lowercase
     numbers = string.digits
     symbols = string.punctuation
+    upper = string.ascii_uppercase
 
-    word = letters + numbers + symbols
+    word = letters + numbers + symbols + upper
 
     password = ''.join(secrets.choice(word) for i in range(length))
 
